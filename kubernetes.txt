@@ -1,0 +1,55 @@
+What is kubernetes and its use.
+Kubernetes is an open-source container orchestration platform designed to automate the deployment, scaling, and management of containerized applications. 
+
+What is Kubernetes Objects?
+In Kubernetes, objects are the basic units of deployment, scaling, and management. Everything in a Kubernetes environment is represented and managed using objects. These can include various items such as namespaces, pods, deployments, volumes, or secrets
+
+What is Imperative vs The Declarative Approach
+The imperative approach might involve using commands like kubectl run, kubectl create, and kubectl scale to manage resources. On the other hand, the declarative approach involves creating YAML configuration files.
+
+
+Working with Labels & Selectors
+Labels are key-value pairs attached to Kubernetes objects. They are used to add metadata to objects, allowing you to organize and categorize resources in a way that makes sense for your applications.
+Selectors are used to filter and identify a set of objects based on their labels.
+
+Difference between pods/ Replicaset/deployment
+A pod is the smallest and simplest unit in the Kubernetes object model. It represents a single instance of a running process in a cluster. Pods are used to deploy and run containers
+
+A ReplicaSet ensures that a specified number of replicas (identical copies) of a pod are running at all times.
+
+A Deployment is a higher-level abstraction that manages ReplicaSets and provides declarative updates to applications. It allows you to describe the desired state of a system and handles the details of deploying and updating the application.
+
+What is Kube Config Files?
+A Kubernetes configuration file, commonly referred to as a "kubeconfig" file, is a file that specifies configuration details for accessing Kubernetes clusters. This file contains information such as cluster details, authentication credentials, and context information
+
+What is and how to use/configuration ClusterRole, ClusterBind, ServiceAccount, Secret, Volumes.
+A ClusterRole is a set of permissions that define a set of operations that can be performed on cluster resources.
+
+Use- Create a ClusterRole to define a set of permissions.
+Define rules specifying the API groups, resources etc.
+
+RoleBinding
+A ClusterRoleBinding binds a ClusterRole to a set of users, groups, or service accounts, granting them the permissions defined in the ClusterRole.
+
+Service Account
+A ServiceAccount is a non-human account associated with applications running within a pod.
+
+Secret
+Secrets are used to store sensitive information, such as passwords, OAuth tokens, and ssh keys.
+
+Volume
+Volumes are used to persist data in Kubernetes pods. They allow data to be shared between containers in the same pod or stored persistently
+
+Update and delete 
+
+Use the kubectl set command to perform imperative updates.
+kubectl apply -f updated-config.yaml= to perform declarative updates
+
+Use the kubectl delete command to delete a resource:
+kubectl delete -f my-config.yaml
+
+Working with kubernetes networking
+Pods within the same node can communicate with each other using localhost. For communication between pods on different nodes, Kubernetes provides a network overlay (such as Flannel, Calico, or Weave) that allows seamless communication across nodes.
+
+Pod-to-Pod Communication with IP Addresses & Environment Variables
+There are two ways to communicate with different pod.
